@@ -1,0 +1,74 @@
+
+/* Estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9; /* Fundo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante altura mínima da tela */
+    flex-direction: column; /* Permite o espaçamento vertical */
+}
+
+/* Contêiner de registro */
+.register-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    /* Espaçamento adicional no topo e na parte inferior */
+    margin: 20px 0; /* 20px de margem no topo e embaixo */
+}
+
+/* Título */
+.register-container h1 {
+    color: #2e7d32; /* Verde escuro */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600; /* Peso da fonte */
+}
+
+/* Labels */
+.register-container label {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+/* Inputs e selects */
+.register-container input,
+.register-container select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Botão */
+.register-container button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #2e7d32; /* Verde escuro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+/* Efeito hover no botão */
+.register-container button:hover {
+    background-color: #1b5e20; /* Verde mais escuro */
+}

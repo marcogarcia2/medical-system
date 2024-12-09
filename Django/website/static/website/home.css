@@ -1,0 +1,66 @@
+/* Define o estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+/* Contêiner principal */
+.container {
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    font-size: 7rem;
+    color: #2e7d32;
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    font-size: 1.2rem; /* Tamanho do texto */
+    color: #555; /* Cor mais suave */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento entre o texto e os botões */
+}
+
+/* Estilização dos botões */
+.button-group button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* Efeito de hover nos botões */
+.button-group button:hover {
+    background-color: #1b5e20;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2e7d32; /* Cor de fundo (verde escuro) */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    position: fixed; /* Fixa o rodapé na parte inferior da página */
+    bottom: 0; /* Alinha ao fundo */
+    width: 100%; /* Largura total */
+    font-size: 0.9rem; /* Tamanho menor para o texto */
+}
+
+footer p {
+    margin: 0; /* Remove margens do texto */
+}

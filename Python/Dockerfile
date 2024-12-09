@@ -1,5 +1,5 @@
 # Usando a imagem oficial do Python
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 # Instalar dependências do sistema para o psycopg2
 RUN apt-get update && apt-get install -y \
