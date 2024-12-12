@@ -28,9 +28,9 @@ A flag ```--build``` força a reconstrução das imagens, mas não é necessári
 
 Esse comando inicia os contêineres do PostgreSQL, que contém o banco de dados, e do Django, que é responsável pelo servidor do site e pela aplicação em si. A comunicação entre os contêineres é orquestrada pelo Django, framework de desenvolvimento de **backend** de sites em **Python**. 
 
-Com os contêineres rodando, rode a aplicação acessando em seu navegador o site:
+Com os contêineres rodando, rode a aplicação acessando em seu navegador o localhost:
 
-[http://127.0.0.1:8000/]
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 
 Para parar a execução do servidor, simplesmente mate o processo com ```CTRL + C```. Além disso, caso deseje-se apagar completamente as informações, isto é, remover os volumes criados pelos contêineres, execute:
