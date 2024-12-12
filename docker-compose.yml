@@ -16,7 +16,6 @@ services:
     networks:
       - app_network
 
-
   django:
     build: ./Django
     container_name: django_app
@@ -32,7 +31,8 @@ services:
       DB_NAME: postgres
     volumes:
       - ./Django:/app
-    command: python manage.py runserver 0.0.0.0:8000  # Agora executa o servidor
+    entrypoint: ["/bin/bash", "/app/entrypoint.sh"]  # Executa o script no início
+    command: python manage.py runserver 0.0.0.0:8000
     networks:
       - app_network
 
@@ -43,20 +43,3 @@ volumes:
 networks:
   app_network:
     driver: bridge
-
-  # python_app:
-  #   build: ./Python
-  #   container_name: python_app
-  #   depends_on:
-  #     - postgres
-  #   environment:
-  #     DB_HOST: postgres
-  #     DB_PORT: 5432
-  #     DB_USER: postgres
-  #     DB_PASSWORD: postgres
-  #     DB_NAME: postgres
-  #   volumes:
-  #     - ./Python:/app
-  #   command: python /app/app/sistema.py
-  #   networks:
-  #     - app_network

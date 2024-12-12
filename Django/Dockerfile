@@ -3,8 +3,9 @@ FROM python:3.10-slim
 
 # Instalar dependências do sistema
 RUN apt-get update && apt-get install -y \
-    libpq-dev gcc && \
-    apt-get clean
+    libpq-dev gcc \
+    netcat-openbsd \
+    && apt-get clean
 
 # Definir o diretório de trabalho
 WORKDIR /app
@@ -18,3 +19,6 @@ COPY . /app/
 
 # Expor a porta 8000 para o servidor Django
 EXPOSE 8000
+
+# Define o comando padrão
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
