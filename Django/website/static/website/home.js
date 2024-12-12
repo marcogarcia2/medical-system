@@ -1,12 +1,10 @@
-document.getElementById('Consultas').addEventListener('click', function () {
-    // Simulação de estado de login; no backend, você usaria cookies ou APIs
-    const usuarioLogado = false; // Substitua isso pela verificação real do backend
-
-    if (!usuarioLogado) {
-        // Redireciona para a página de login
-        window.location.href = '/login/';
+document.addEventListener('DOMContentLoaded', function () {
+    const consultasButton = document.getElementById('botaoConsultas');
+    if (consultasButton) {
+        consultasButton.addEventListener('click', function () {
+            window.location.href = '/consultas/';
+        });
     } else {
-        // Redireciona para a página de consultas
-        window.location.href = '/consultas/';
+        console.error("Botão 'Consultas' não encontrado!");
     }
 });

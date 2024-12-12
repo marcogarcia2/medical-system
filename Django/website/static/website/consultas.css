@@ -1,0 +1,158 @@
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho fixo */
+header {
+    width: 100%;
+    background-color: #2e7d32; /* Verde escuro */
+    padding: 5px 15px; /* Reduzido para economizar espaço */
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre botão e logo */
+    align-items: center;
+    z-index: 1000;
+    height: 50px; /* Define altura fixa mais compacta */
+    box-sizing: border-box; /* Inclui padding na altura */
+}
+
+/* Botão Voltar à Home */
+.back-home-btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0;
+}
+
+.back-home-btn img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.back-home-btn:hover {
+    color: #d0f0d0; /* Verde mais claro ao passar o mouse */
+}
+
+/* Logo da empresa */
+.logo {
+    margin-left: auto; /* Empurra a logo para o lado direito */
+    color: white;
+    font-size: 1.2rem; /* Ajustado para um tamanho menor */
+    font-weight: bold;
+    white-space: nowrap; /* Evita quebra de linha na logo */
+}
+
+/* Conteúdo principal */
+.overlay {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    height: 90%;
+    margin-top: 60px; /* Ajustado para compensar corretamente o cabeçalho fixo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Título */
+h1 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+/* Barra de pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.search-bar .search-btn {
+    width: 50px; /* Ajuste a largura do botão verde */
+    height: 50px; /* Ajuste a altura do botão verde */
+    background-color: #2e7d32; /* Verde escuro */
+    border: none;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.search-bar .search-btn:hover {
+    background-color: #1b5e20;
+}
+
+.search-bar .search-btn img {
+    width: 24px; /* Tamanho fixo da imagem */
+    height: 24px; /* Tamanho fixo da imagem */
+}
+
+
+/* Área de resultados */
+.results {
+    margin-top: 20px;
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.results th, .results td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.results th {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.results tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.results tr:hover {
+    background-color: #f1f1f1;
+}

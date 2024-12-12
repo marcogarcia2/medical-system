@@ -23,7 +23,7 @@ h1 {
 }
 
 .subtitle {
-    font-size: 1.2rem; /* Tamanho do texto */
+    font-size: 1.5rem; /* Tamanho do texto */
     color: #555; /* Cor mais suave */
     text-align: center; /* Centraliza o texto */
     margin-bottom: 20px; /* Espaçamento entre o texto e os botões */
@@ -63,4 +63,25 @@ footer {
 
 footer p {
     margin: 0; /* Remove margens do texto */
+}
+
+/* Texto de cadastro */
+.register {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+}
+
+/* Link de cadastro */
+.register-link {
+    color: #2e7d32; /* Verde */
+    font-weight: 600; /* Negrito */
+    text-decoration: none; /* Remove sublinhado */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover {
+    color: #1b5e20; /* Verde mais escuro ao passar o mouse */
 }

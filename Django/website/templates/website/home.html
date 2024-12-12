@@ -13,14 +13,19 @@
         <h1>Dok.</h1>
         <p class="subtitle">Suas consultas nunca foram tão ágeis.</p>
         <div class="button-group">
-            <button id="Consultas">Ver Consultas</button>
+            <button id="botaoConsultas">Ver Consultas</button>
         </div>
         <!-- Link para o JavaScript -->
-        <script src="{% static 'website/home.js' %}"></script>
+        <div>
+            <p class="register">
+                Não tem uma conta? <a href="{% url 'register' %}" class="register-link">Cadastre-se</a>
+            </p>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 Dok. Todos os direitos reservados.</p>
     </footer>
+    <script src="{% static 'website/home.js' %}"></script>
 </body>
 </html>
 
