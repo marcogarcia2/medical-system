@@ -1,7 +1,7 @@
 # Dok - Sistema de Gerenciamento de Consultas Médicas
 Projeto final da disciplina SSC0621 - Modelagem Orientada a Objetos.
 
-**Docente:** Profa. Dra. Lina Maria Garces Rodriguez
+**Docente:** Profa. Dra. Lina María Garcés Rodríguez
 
 ## Alunos 
 - Leonardo Gueno Rissetto (13676482)
