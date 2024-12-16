@@ -11,8 +11,8 @@ services:
       POSTGRES_DB: postgres
     volumes:
       - postgres_db_data:/var/lib/postgresql/data
-      - ./db/init.sql:/docker-entrypoint-initdb.d/1-esquema.sql
-      - ./db/data.sql:/docker-entrypoint-initdb.d/2-dados.sql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/1-init.sql
+      - ./db/data.sql:/docker-entrypoint-initdb.d/2-data.sql
     networks:
       - app_network
 

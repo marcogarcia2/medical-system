@@ -29,23 +29,50 @@ def buscar_consultas_por_cpf(cpf_paciente):
         'medico', 'medico__cpf', 'atendente', 'atendente__cpf', 'paciente', 'paciente__cpf'
     ).order_by('data_consulta')
 
+    nome_paciente = None
+    if consultas.exists():
+        nome_paciente = consultas.first().paciente.cpf.nome
+
     resultados = []
     for consulta in consultas:
         resultados.append({
             'data_consulta': consulta.data_consulta,
+            'especialidade_medico': consulta.medico.especialidade,  # Especialidade do médico
             'nome_medico': consulta.medico.cpf.nome,  # Nome do médico relacionado
             'nome_atendente': consulta.atendente.cpf.nome,  # Nome do atendente relacionado
             'prontuario': consulta.prontuario,
         })
 
-    return resultados
+    return nome_paciente, resultados
 
 
 def consultas_view(request):
     cpf = request.GET.get('cpf', '')
+    
     resultados = []
+    # resultados é uma lista de dicionários iguais
 
+    nome_paciente = None
     if cpf:
-        resultados = buscar_consultas_por_cpf(cpf)
+        nome_paciente, resultados = buscar_consultas_por_cpf(cpf)
 
-    return render(request, 'website/consultas.html', {'resultados': resultados, 'cpf': cpf})
+        # Tratamento da saída
+        for resultado in resultados:
+
+            # Data da consulta, deixar em português
+            resultado['data_consulta'] = resultado['data_consulta'].strftime('%d/%m/%Y')
+            
+            # Especialidade, nome do médico e nome do atendente, deixar somente as primeiras letras maiúsculas
+            resultado['especialidade_medico'] = resultado['especialidade_medico'].title()
+            resultado['nome_medico'] = resultado['nome_medico'].title()
+            resultado['nome_atendente'] = resultado['nome_atendente'].title()
+
+            # Prontuario
+            if resultado['prontuario'] is None:
+                resultado['prontuario'] = "Indisponível"
+
+    return render(request, 'website/consultas.html', {
+        'cpf': cpf,
+        'nome_paciente': nome_paciente,
+        'resultados': resultados
+    })

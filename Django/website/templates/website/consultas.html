@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico de Consultas</title>
     <link rel="stylesheet" href="{% static 'website/consultas.css' %}">
@@ -24,43 +25,74 @@
     <!-- Conteúdo principal -->
     <div class="overlay">
         <div class="container">
-            <h1>Histórico de Consultas</h1>
-            <form action="/consultas" method="GET">
-                <div class="search-bar">
-                    <input type="text" id="cpf" name="cpf" placeholder="Ex: 12345678901" required>
-                    <button type="submit" class="search-btn">
-                        <img src="{% static 'website/lupa-icon.png' %}" alt="Buscar">
-                    </button>
-                </div>
-            </form>
+            <div class="top">
+                <h1>Histórico de Consultas</h1>
+                <p>Digite o seu CPF para resgatar seu histórico de consultas:</p>
+                <form action="/consultas" method="GET">
+                    <div class="search-bar">
+                        <input 
+                        type="text" 
+                        id="cpf" 
+                        name="cpf" 
+                        placeholder="Ex: 12345678901" 
+                        required 
+                        pattern="\d{11}" 
+                        title="Insira exatamente 11 números."
+                        maxlength="11"
+                        >
+                        <button type="submit" class="search-btn">
+                            <img src="{% static 'website/lupa-icon.png' %}" alt="Buscar">
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="patient-info">
+                {% if nome_paciente %}
+                    <h2>Paciente: {{ nome_paciente }}</h2>
+                {% endif %}
+            </div>
             <!-- Área de resultados -->
             <div class="results">
-                <h2>Resultados:</h2>
-                {% if resultados %}
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Médico</th>
-                                <th>Atendente</th>
-                                <th>Prontuário</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for consulta in resultados %}
-                            <tr>
-                                <td>{{ consulta.data_consulta }}</td>
-                                <td>{{ consulta.nome_medico }}</td>
-                                <td>{{ consulta.nome_atendente }}</td>
-                                <td>{{ consulta.prontuario }}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                {% if cpf %}
+                    <h2>Resultados encontrados:</h2>
+                    {% if resultados %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Tipo</th>
+                                    <th>Médico</th>
+                                    <th>Atendente</th>
+                                    <th>Prontuário</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for consulta in resultados %}
+                                    <tr>
+                                        <td>{{ consulta.data_consulta }}</td>
+                                        <td>{{ consulta.especialidade_medico }}</td>
+                                        <td>{{ consulta.nome_medico }}</td>
+                                        <td>{{ consulta.nome_atendente }}</td>
+                                        <td>
+                                            {% if consulta.prontuario and consulta.prontuario != "Indisponível" %}
+                                                <a href="{{ consulta.prontuario }}" target="_blank" rel="noopener noreferrer">
+                                                {{ consulta.prontuario }}
+                                                </a>
+                                            {% else %}
+                                                Indisponível
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p>Nenhuma consulta encontrada para o CPF: {{ cpf }}</p>
+                    {% endif %}
                 {% else %}
-                    <p>Nenhuma consulta encontrada para o CPF: {{ cpf }}</p>
+                    <!-- Exibe nada, ou algum conteúdo padrão sem a mensagem de erro -->
                 {% endif %}
-            </div>            
+            </div>           
         </div>
     </div>
 </body>

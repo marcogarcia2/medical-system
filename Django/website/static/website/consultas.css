@@ -1,6 +1,6 @@
 /* Estilo geral da página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
@@ -12,19 +12,30 @@ body {
 /* Cabeçalho fixo */
 header {
     width: 100%;
-    background-color: #2e7d32; /* Verde escuro */
-    padding: 5px 15px; /* Reduzido para economizar espaço */
-    position: fixed; /* Fixa o cabeçalho no topo */
+    background-color: #2e7d32;
+    padding: 5px 15px;
+    position: fixed;
     top: 0;
     left: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: space-between; /* Espaçamento entre botão e logo */
+    justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    height: 50px; /* Define altura fixa mais compacta */
-    box-sizing: border-box; /* Inclui padding na altura */
+    height: 50px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
 }
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha todos os filhos no centro horizontal */
+    justify-content: center; /* Opcional: centraliza verticalmente se necessário */
+    width: 100%; /* Garante que o container ocupe toda a largura */
+    margin-bottom: 20px; /* Espaçamento abaixo da pesquisa */
+}
+
 
 /* Botão Voltar à Home */
 .back-home-btn {
@@ -39,6 +50,7 @@ header {
     text-decoration: none;
     transition: color 0.3s ease;
     padding: 0;
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
 }
 
 .back-home-btn img {
@@ -48,17 +60,25 @@ header {
 }
 
 .back-home-btn:hover {
-    color: #d0f0d0; /* Verde mais claro ao passar o mouse */
+    color: #d0f0d0;
 }
 
 /* Logo da empresa */
 .logo {
-    margin-left: auto; /* Empurra a logo para o lado direito */
+    margin-left: auto;
     color: white;
-    font-size: 1.2rem; /* Ajustado para um tamanho menor */
+    font-size: 1.2rem;
     font-weight: bold;
-    white-space: nowrap; /* Evita quebra de linha na logo */
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
 }
+
+/* .search-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 20px; 
+} */
 
 /* Conteúdo principal */
 .overlay {
@@ -67,17 +87,25 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 90%;
     height: 90%;
-    margin-top: 60px; /* Ajustado para compensar corretamente o cabeçalho fixo */
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
     padding: 20px;
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
 }
 
 /* Título */
 h1 {
     color: #2e7d32;
     margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+}
+
+p {
+    text-align: center;
 }
 
 /* Barra de pesquisa */
@@ -87,6 +115,7 @@ h1 {
     width: 100%;
     max-width: 600px;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .search-bar input[type="text"] {
@@ -97,12 +126,13 @@ h1 {
     border-radius: 10px 0 0 10px;
     font-size: 1rem;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
 }
 
 .search-bar .search-btn {
-    width: 50px; /* Ajuste a largura do botão verde */
-    height: 50px; /* Ajuste a altura do botão verde */
-    background-color: #2e7d32; /* Verde escuro */
+    width: 50px;
+    height: 56px;
+    background-color: #2e7d32;
     border: none;
     border-radius: 0 10px 10px 0;
     display: flex;
@@ -118,41 +148,83 @@ h1 {
 }
 
 .search-bar .search-btn img {
-    width: 24px; /* Tamanho fixo da imagem */
-    height: 24px; /* Tamanho fixo da imagem */
+    width: 24px;
+    height: 24px;
 }
 
-
-/* Área de resultados */
-.results {
-    margin-top: 20px;
-    width: 100%;
-    flex: 1;
-    overflow-y: auto;
-}
-
+/* Estilo da tabela */
 .results table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0; /* Remove espaçamento entre as bordas */
     margin-top: 10px;
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+    background-color: white; /* Fundo branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que o conteúdo respeite as bordas */
 }
 
-.results th, .results td {
-    border: 1px solid #ddd;
-    padding: 10px;
+/* Cabeçalho da tabela */
+.results th {
+    background-color: #2e7d32; /* Verde escuro */
+    color: white;
+    padding: 20px 40px; /* Espaçamento interno */
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid #1b5e20; /* Linha separadora */
+}
+
+/* Linhas da tabela */
+.results td {
+    white-space: nowrap;
+    padding: 20px 40px; /* Ajusta espaçamento interno */
     text-align: left;
     font-size: 0.9rem;
+    color: #333; /* Texto escuro */
+    border-bottom: 1px solid #ddd; /* Linha separadora entre as células */
 }
 
-.results th {
-    background-color: #2e7d32;
-    color: white;
-}
-
+/* Cor alternada para as linhas */
 .results tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Cor de fundo para linhas pares */
 }
 
+/* Efeito ao passar o mouse */
 .results tr:hover {
-    background-color: #f1f1f1;
+    background-color: #e8f5e9; /* Verde claro */
+    cursor: pointer; /* Adiciona o cursor pointer para indicar interatividade */
 }
+
+/* Links no Prontuário */
+.results td a {
+    color: #2e7d32; /* Verde */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.results td a:hover {
+    color: #1b5e20; /* Verde mais escuro ao passar o mouse */
+    text-decoration: underline;
+}
+
+/* Bordas arredondadas (ajuste para cabeçalho e rodapé) */
+.results th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.results th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.results td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.results td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
