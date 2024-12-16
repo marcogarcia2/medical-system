@@ -1,21 +1,9 @@
 from django.shortcuts import render
-from .models import Consulta
+from .models import Consulta, Paciente
 
 def home(request):
     return render(request, 'website/home.html')
 
-# def consultas(request):
-#     # Verifica se o usuário está logado
-#     if not request.user.is_authenticated:
-#         return render(request, 'website/login.html')
-#     return render(request, 'website/consultas.html')
-
-def login_view(request):
-    # Lógica de login (exemplo simplificado)
-    if request.method == 'POST':
-        # Autenticação aqui
-        pass
-    return render(request, 'website/login.html')
 
 def register_view(request):
     if request.method == 'POST':
@@ -24,24 +12,25 @@ def register_view(request):
     return render(request, 'website/register.html')
     
 def buscar_consultas_por_cpf(cpf_paciente):
+    nome_paciente = None
+    nome_paciente = Paciente.objects.filter(cpf=cpf_paciente)
+    nome_paciente = nome_paciente.first()
+
     # Usa select_related para otimizar consultas relacionadas
     consultas = Consulta.objects.filter(paciente__cpf=cpf_paciente).select_related(
         'medico', 'medico__cpf', 'atendente', 'atendente__cpf', 'paciente', 'paciente__cpf'
     ).order_by('data_consulta')
 
-    nome_paciente = None
-    if consultas.exists():
-        nome_paciente = consultas.first().paciente.cpf.nome
-
     resultados = []
-    for consulta in consultas:
-        resultados.append({
-            'data_consulta': consulta.data_consulta,
-            'especialidade_medico': consulta.medico.especialidade,  # Especialidade do médico
-            'nome_medico': consulta.medico.cpf.nome,  # Nome do médico relacionado
-            'nome_atendente': consulta.atendente.cpf.nome,  # Nome do atendente relacionado
-            'prontuario': consulta.prontuario,
-        })
+    if consultas.exists():
+        for consulta in consultas:
+            resultados.append({
+                'data_consulta': consulta.data_consulta,
+                'especialidade_medico': consulta.medico.especialidade,  # Especialidade do médico
+                'nome_medico': consulta.medico.cpf.nome,  # Nome do médico relacionado
+                'nome_atendente': consulta.atendente.cpf.nome,  # Nome do atendente relacionado
+                'prontuario': consulta.prontuario,
+            })
 
     return nome_paciente, resultados
 

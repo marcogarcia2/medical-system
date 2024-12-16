@@ -54,8 +54,8 @@
             <!-- Área de resultados -->
             <div class="results">
                 {% if cpf %}
-                    <h2>Resultados encontrados:</h2>
                     {% if resultados %}
+                        <h2>Consultas encontradas:</h2>
                         <table>
                             <thead>
                                 <tr>
@@ -87,7 +87,7 @@
                             </tbody>
                         </table>
                     {% else %}
-                        <p>Nenhuma consulta encontrada para o CPF: {{ cpf }}</p>
+                        <p>Nenhuma consulta encontrada.</p>
                     {% endif %}
                 {% else %}
                     <!-- Exibe nada, ou algum conteúdo padrão sem a mensagem de erro -->

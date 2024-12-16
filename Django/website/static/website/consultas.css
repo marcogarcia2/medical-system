@@ -9,6 +9,15 @@ body {
     align-items: center;
 }
 
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha todos os filhos no centro horizontal */
+    justify-content: center; /* Opcional: centraliza verticalmente se necessário */
+    width: 100%; /* Garante que o container ocupe toda a largura */
+    margin-bottom: 20px; /* Espaçamento abaixo da pesquisa */
+}
+
 /* Cabeçalho fixo */
 header {
     width: 100%;
@@ -27,14 +36,6 @@ header {
     font-family: 'Poppins', sans-serif; /* Fonte Poppins */
 }
 
-.top {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinha todos os filhos no centro horizontal */
-    justify-content: center; /* Opcional: centraliza verticalmente se necessário */
-    width: 100%; /* Garante que o container ocupe toda a largura */
-    margin-bottom: 20px; /* Espaçamento abaixo da pesquisa */
-}
 
 
 /* Botão Voltar à Home */

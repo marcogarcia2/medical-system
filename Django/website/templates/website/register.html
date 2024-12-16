@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="{% static 'website/register.css' %}">
 </head>
 <body>
+
+    <!-- Cabeçalho fixo -->
+    <header>
+        <div class="header-left">
+            <!-- Botão Voltar à Home -->
+            <button class="back-home-btn" onclick="window.location.href='/'">
+                <img src="{% static 'website/arrow-icon.png' %}" alt="Voltar"> Voltar à Home
+            </button>
+        </div>
+        <div class="logo">
+            <h2>Dok.</h2>
+        </div>
+    </header>
+
     <div class="register-container">
         <h1>Crie sua Conta</h1>
         <form method="POST" action="{% url 'register' %}">
