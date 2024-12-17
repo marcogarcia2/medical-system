@@ -85,3 +85,31 @@ footer p {
 .register-link:hover {
     color: #1b5e20; /* Verde mais escuro ao passar o mouse */
 }
+
+.messages {
+    position: absolute; /* Fixa no topo */
+    top: 20px; /* Distância do topo */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta o ponto de referência para o centro */
+    width: 100%; /* Largura total */
+    max-width: 600px; /* Largura máxima para não ficar muito grande */
+    text-align: center; /* Centraliza o texto */
+    z-index: 1000; /* Garante que a mensagem apareça acima dos outros elementos */
+    margin: 0; /* Remove margens */
+}
+
+.alert {
+    padding: 15px; /* Aumenta o padding para melhorar a aparência */
+    border-radius: 5px;
+    font-size: 1rem; /* Ajusta o tamanho do texto */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
+    margin: 0 auto; /* Centraliza a mensagem */
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
