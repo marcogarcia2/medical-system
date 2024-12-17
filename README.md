@@ -10,6 +10,8 @@ Projeto final da disciplina SSC0621 - Modelagem Orientada a Objetos.
 - Marco Antonio Gaspar Garcia (11833581)
 - Thiago Kashivagui Gonçalves (13676579)
 
+Link do vídeo de explicação do sistema: https://youtu.be/LHozm-LvQng
+
 ## Descrição do Sistema
 **Dok** é uma plataforma online que busca facilitar o agendamento de consultas médicas, pode ser facilmente amplamente adotado, tanto por médicos quanto por pacientes de todo o Brasil. A ideia principal é fornecer um Hub com todas as informações necessárias para o agendamento e o gerenciamento de consultas médicas, em que os médicos possam organizar sua rotina de atendimentos de forma prática e que os pacientes possam acessar rapidamente informações sobre suas consultas. 
 
