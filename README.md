@@ -13,7 +13,7 @@ Projeto final da disciplina SSC0621 - Modelagem Orientada a Objetos.
 ## Descrição do Sistema
 **Dok** é uma plataforma online que busca facilitar o agendamento de consultas médicas, pode ser facilmente amplamente adotado, tanto por médicos quanto por pacientes de todo o Brasil. A ideia principal é fornecer um Hub com todas as informações necessárias para o agendamento e o gerenciamento de consultas médicas, em que os médicos possam organizar sua rotina de atendimentos de forma prática e que os pacientes possam acessar rapidamente informações sobre suas consultas. 
 
-> Na versão atual, o Dok permite a pesquisa de todo o ```histórico de consultas``` médicas realizadas por cada pessoa, além do ```cadastro de novos usuários``` no sistema, sejam eles médicos, pacientes ou atendentes.
+- Na versão atual, o Dok permite a pesquisa de todo o **```histórico de consultas```** médicas realizadas por cada pessoa, além do **```cadastro de novos usuários```** no sistema, sejam eles médicos, pacientes ou atendentes.
 
 ## Pré-requisitos
 A única dependência necessária para executar esta aplicação é o **Docker Desktop**. O Docker é uma plataforma de contêinerização que facilita a criação, execução e gerenciamento de contêineres para aplicações. 
