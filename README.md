@@ -13,10 +13,13 @@ Projeto final da disciplina SSC0621 - Modelagem Orientada a Objetos.
 ## Descrição do Sistema
 **Dok** é uma plataforma online que busca facilitar o agendamento de consultas médicas, pode ser facilmente amplamente adotado, tanto por médicos quanto por pacientes de todo o Brasil. A ideia principal é fornecer um Hub com todas as informações necessárias para o agendamento e o gerenciamento de consultas médicas, em que os médicos possam organizar sua rotina de atendimentos de forma prática e que os pacientes possam acessar rapidamente informações sobre suas consultas. 
 
-Na versão atual, o Dok permite a pesquisa de todo o histórico de consultas médicas realizadas por cada pessoa.
+> Na versão atual, o Dok permite a pesquisa de todo o ```histórico de consultas``` médicas realizadas por cada pessoa, além do ```cadastro de novos usuários``` no sistema, sejam eles médicos, pacientes ou atendentes.
 
 ## Pré-requisitos
-A única dependência necessária para executar esta aplicação é o **Docker**. O Docker é uma plataforma de contêinerização que facilita a criação, execução e gerenciamento de contêineres para aplicações. Certifique-se de que ele está instalado em sua máquina antes de prosseguir. 
+A única dependência necessária para executar esta aplicação é o **Docker Desktop**. O Docker é uma plataforma de contêinerização que facilita a criação, execução e gerenciamento de contêineres para aplicações. 
+
+
+Para instalar o Docker, acesse https://www.docker.com/ e faça o download da versão apropriada para o seu sistema operacional. Certifique-se de que ele está instalado em sua máquina antes de prosseguir.
 
 ## Como utilizar o sistema
 
@@ -32,8 +35,13 @@ Com os contêineres rodando, rode a aplicação acessando em seu navegador o loc
 
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
+Para parar a execução do servidor, simplesmente mate o processo com ```CTRL + C```. Apesar de matar o servidor, o contêiner continua rodando e pode aumentar o risco de sobrecarregar o seu computador. Por isso, é boa prática parar o contêiner com:
 
-Para parar a execução do servidor, simplesmente mate o processo com ```CTRL + C```. Além disso, caso deseje-se apagar completamente as informações, isto é, remover os volumes criados pelos contêineres, execute:
+```bash
+docker compose down
+```
+
+Além disso, caso deseje-se apagar completamente as informações, isto é, remover os volumes criados pelos contêineres ou apagar os novos dados inseridos no banco de dados, execute:
 
 ```bash
 docker compose down -v
