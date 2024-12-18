@@ -77,7 +77,7 @@ class Consulta(models.Model):
 
     class Meta:
         db_table = 'consultas'
-        unique_together = ('medico', 'paciente', 'atendente', 'data_consulta')
+        unique_together = ('medico', 'atendente', 'data_consulta')
 
     def __str__(self):
         return f"Consulta em {self.data_consulta} - Paciente: {self.paciente.cpf.nome}"

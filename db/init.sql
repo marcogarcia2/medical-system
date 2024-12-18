@@ -96,7 +96,7 @@ CREATE TABLE Consultas (
 
     -- Constraints de consulta
     CONSTRAINT pk_consultas PRIMARY KEY (id),
-    CONSTRAINT uni_consultas_1 UNIQUE (medico_crm, paciente_cpf, atendente_cpf, data_consulta),
+    CONSTRAINT uni_consultas_1 UNIQUE (medico_crm, paciente_cpf, data_consulta),
     CONSTRAINT uni_consultas_2 UNIQUE (prontuario),
     CONSTRAINT fk_consultas_1 FOREIGN KEY (medico_crm) REFERENCES Medicos (crm) ON DELETE CASCADE,
     CONSTRAINT fk_consultas_2 FOREIGN KEY (paciente_cpf) REFERENCES Pacientes (cpf) ON DELETE CASCADE,
